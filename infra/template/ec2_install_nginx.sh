@@ -8,7 +8,7 @@ ufw allow 443
 git clone https://github.com/jbsbuilder/project-blog.git
 
 # Update directory
-cd /var/www/svelte-app
+cd project-blog
 
 npm install
 npm run build
