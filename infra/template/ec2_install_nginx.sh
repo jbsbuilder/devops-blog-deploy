@@ -5,7 +5,7 @@ apt-get install -y nginx nodejs npm git
 ufw allow 80
 ufw allow 443
 
-git clone <your-repo-url> /var/www/svelte-app
+git clone https://github.com/jbsbuilder/project-blog.git
 
 # Update directory
 cd /var/www/svelte-app
@@ -14,7 +14,7 @@ npm install
 npm run build
 
 # Configure Nginx to serve the Svelte app Update svelte path
-cat <<EOF > /etc/nginx/sites-available/svelte-app
+cat <<EOF > /etc/nginx/sites-available/project-blog
 server {
     listen 80;
     server_name _;
@@ -28,7 +28,7 @@ server {
 }
 EOF
 
-ln -s /etc/nginx/sites-available/svelte-app /etc/nginx/sites-enabled/svelte-app
+ln -s /etc/nginx/sites-available/project-blog /etc/nginx/sites-enabled/project-blog
 
 rm /etc/nginx/sites-enabled/default
 

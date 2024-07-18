@@ -1,3 +1,5 @@
+#dont forget to change the enviorment files to setup the tfvars
+
 pipeline {
     agent any
 
