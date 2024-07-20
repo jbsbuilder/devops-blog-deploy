@@ -16,7 +16,7 @@ npm run build
 # Configure Nginx to serve the Svelte app Update svelte path
 cat <<EOF > /etc/nginx/sites-available/project-blog
 server {
-    listen 5000;
+    listen 80;
     server_name _;
 
     root /var/www/svelte-app/build;
