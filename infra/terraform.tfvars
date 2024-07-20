@@ -14,4 +14,4 @@ ec2_user_data_install_nginx = ""
 
 domain_name = "cloudsmithlabs.com"
 
-ec2_ami_id = "ami-0ecaad63ed3668fca"
+ec2_ami_id = "ami-0ecaad63ed3668fca" #this needs to be debian

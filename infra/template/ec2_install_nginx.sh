@@ -1,20 +1,20 @@
 #!/bin/bash
-apt-get update -y
-apt-get install -y nginx nodejs npm git
+sudo apt-get update -y
+sudo apt-get install -y nginx nodejs npm git
 
-ufw allow 80
-ufw allow 443
+sudo ufw allow 80
+sudo ufw allow 443
 
-git clone https://github.com/jbsbuilder/project-blog.git
+sudo git clone https://github.com/jbsbuilder/project-blog.git
 
 # Update directory
-cd project-blog
+sudo cd project-blog
 
-npm install
-npm run build
+sudo npm install
+sudo npm run build
 
 # Configure Nginx to serve the Svelte app Update svelte path
-cat <<EOF > /etc/nginx/sites-available/project-blog
+sudo cat <<EOF > /etc/nginx/sites-available/project-blog
 server {
     listen 80;
     server_name _;
@@ -28,12 +28,12 @@ server {
 }
 EOF
 
-ln -s /etc/nginx/sites-available/project-blog /etc/nginx/sites-enabled/project-blog
+sudo ln -s /etc/nginx/sites-available/project-blog /etc/nginx/sites-enabled/project-blog
 
-rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
 
-nginx -t
+sudo nginx -t
 
-systemctl restart nginx
-systemctl enable nginx
+sudo systemctl restart nginx
+sudo systemctl enable nginx
 
