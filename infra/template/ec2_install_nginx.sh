@@ -4,8 +4,7 @@
 sudo yum update -y
 
 # Install nginx, nodejs, npm, and git
-sudo amazon-linux-extras install -y nginx1
-sudo yum install -y nodejs npm git
+sudo yum install -y nodejs npm git nginx
 
 # Allow HTTP and HTTPS traffic through the firewall using iptables
 sudo iptables -I INPUT -p tcp --dport 80 -j ACCEPT
