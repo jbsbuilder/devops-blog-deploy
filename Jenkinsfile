@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    enviorment {
+    environment {
         TFVARS_FILE = terraform.tfvars
     }
 
