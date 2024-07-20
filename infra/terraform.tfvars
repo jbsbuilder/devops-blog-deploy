@@ -14,4 +14,4 @@ ec2_user_data_install_nginx = ""
 
 domain_name = "cloudsmithlabs.com"
 
-ec2_ami_id = "ami-026e3067cdba1273f"
+ec2_ami_id = "ami-01887e957bc39aaca"
