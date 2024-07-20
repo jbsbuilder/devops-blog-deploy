@@ -3,6 +3,10 @@
 pipeline {
     agent any
 
+    enviorment {
+        TFVARS_FILE = terraform.tfvars
+    }
+
     parameters {
             booleanParam(name: 'PLAN_TERRAFORM', defaultValue: false, description: 'Check to plan Terraform changes')
             booleanParam(name: 'APPLY_TERRAFORM', defaultValue: false, description: 'Check to apply Terraform changes')
