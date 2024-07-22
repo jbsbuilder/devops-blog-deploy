@@ -2,7 +2,7 @@
 
 sudo dnf update -y
 
-sudo dnf install httpd git nodejs -y
+sudo dnf install httpd git curl -y
 
 sudo systemctl start httpd
 
@@ -12,9 +12,15 @@ sudo usermod -a -G apache ec2-user
 
 exit
 
-#these commands must be ran after set up
+groups
 
-<sudo chown -R ec2-user:apache /var/www
+sudo chmod 2775 /var/www
+find /var/www -type d -exec sudo chmod 2775 {} \;
+
+find /var/www -type f -exec sudo chmod 0664 {} \;
+
+curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
+sudo yum install -y nodejs
 
 git clone https://github.com/jbsbuilder/project-blog.git
 
@@ -24,4 +30,4 @@ npm install
 
 npm run build
 
-sudo cp -r dist/* /var/www/html/>
+sudo cp -r dist/* /var/www/html/
