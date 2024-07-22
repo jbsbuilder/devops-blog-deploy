@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#these commands are for Amazon Linux 2. They must be ran after the instance is created.
+
 sudo dnf update -y
 
 sudo dnf install httpd git curl -y
